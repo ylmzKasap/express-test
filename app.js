@@ -15,7 +15,8 @@ var app = express();
 const mongoose = require('mongoose');
 
 //Set up default mongoose connection
-const mongoDB = `mongodb+srv://mongo_learner:${process.env["DATABASE_PASSWORD"]}@sandbox.ovvnhvg.mongodb.net/local_library?retryWrites=true&w=majority`;
+const dev_db_url = `mongodb+srv://mongo_learner:${process.env["DATABASE_PASSWORD"]}@sandbox.ovvnhvg.mongodb.net/local_library?retryWrites=true&w=majority`;
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, () => {
   console.log("connected")
 },
