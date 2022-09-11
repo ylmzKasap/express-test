@@ -6,8 +6,8 @@
   },
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "serverstart": "SET DEBUG=express-locallibrary-tutorial:* & npm run start"
+    "start": "node ./bin/www",
+    "serverstart": "SET DEBUG=express-locallibrary-tutorial:* & nodemon ./bin/www"
   },
   "dependencies": {
     "async": "^3.2.4",
